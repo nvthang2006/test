@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -21,6 +21,6 @@ class HomeController extends Controller
         // Lấy 3 bài viết mới nhất
         $posts = Post::with('user')->latest('created_at')->take(3)->get();
 
-        return view('frontend.home', compact('categories', 'products', 'posts'));
+        return view('client.home', compact('categories', 'products', 'posts'));
     }
 }

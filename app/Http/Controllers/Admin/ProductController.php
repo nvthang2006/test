@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -10,7 +9,7 @@ use App\Services\ProductService;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 
-class ProductController extends Controller
+class ProductController extends AdminBaseController
 {
     protected $productService;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
@@ -52,6 +52,6 @@ class BookingController extends Controller
             ->latest()
             ->get();
             
-        return view('frontend.bookings.history', compact('bookings'));
+        return view('client.bookings.history', compact('bookings'));
     }
 }

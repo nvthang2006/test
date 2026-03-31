@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
@@ -22,6 +22,6 @@ class ProductController extends Controller
             ->take(4)
             ->get();
             
-        return view('frontend.products.show', compact('product', 'relatedProducts'));
+        return view('client.products.show', compact('product', 'relatedProducts'));
     }
 }

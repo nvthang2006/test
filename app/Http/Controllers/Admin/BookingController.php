@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class BookingController extends AdminBaseController
 {
     /**
      * Hiển thị danh sách các Đơn Đặt Tour cho Admin
