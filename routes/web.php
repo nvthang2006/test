@@ -12,17 +12,17 @@ Route::middleware('guest')->group(function () {
 
 Route::post('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
-// === Frontend (Giao diện Public) ===
-Route::namespace('App\Http\Controllers\Frontend')->group(function () {
-    Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
-    Route::get('/san-pham/{slug}', [App\Http\Controllers\Frontend\ProductController::class, 'show'])->name('products.detail');
-    Route::get('/tin-tuc/{slug}', [App\Http\Controllers\Frontend\PostController::class, 'show'])->name('posts.detail');
-    Route::get('/tim-kiem', [App\Http\Controllers\Frontend\SearchController::class, 'index'])->name('search');
+// === Client (Giao diện Public) ===
+Route::namespace('App\Http\Controllers\Client')->group(function () {
+    Route::get('/', [App\Http\Controllers\Client\HomeController::class, 'index'])->name('home');
+    Route::get('/san-pham/{slug}', [App\Http\Controllers\Client\ProductController::class, 'show'])->name('products.detail');
+    Route::get('/tin-tuc/{slug}', [App\Http\Controllers\Client\PostController::class, 'show'])->name('posts.detail');
+    Route::get('/tim-kiem', [App\Http\Controllers\Client\SearchController::class, 'index'])->name('search');
 
     // Giao dịch & Khách hàng
     Route::middleware('auth')->group(function () {
-        Route::post('/dat-tour/{product}', [App\Http\Controllers\Frontend\BookingController::class, 'store'])->name('bookings.store');
-        Route::get('/lich-su-dat-tour', [App\Http\Controllers\Frontend\BookingController::class, 'history'])->name('bookings.history');
+        Route::post('/dat-tour/{product}', [App\Http\Controllers\Client\BookingController::class, 'store'])->name('bookings.store');
+        Route::get('/lich-su-dat-tour', [App\Http\Controllers\Client\BookingController::class, 'history'])->name('bookings.history');
     });
 });
 

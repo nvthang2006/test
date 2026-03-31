@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Product;
 use App\Models\User;
@@ -10,7 +9,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class DashboardController extends Controller
+class DashboardController extends AdminBaseController
 {
     public function index()
     {

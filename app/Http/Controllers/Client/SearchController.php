@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -38,6 +38,6 @@ class SearchController extends Controller
         // Cung cấp danh sách categories để load ra thanh bộ lọc form
         $categories = Category::all();
 
-        return view('frontend.search_results', compact('results', 'query', 'categories', 'categoryId'));
+        return view('client.search_results', compact('results', 'query', 'categories', 'categoryId'));
     }
 }

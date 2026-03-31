@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
@@ -21,6 +21,6 @@ class PostController extends Controller
             ->take(4)
             ->get();
             
-        return view('frontend.posts.show', compact('post', 'recentPosts'));
+        return view('client.posts.show', compact('post', 'recentPosts'));
     }
 }
